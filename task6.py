@@ -8,8 +8,7 @@ from flask import Flask, render_template
 
 
 # Flask expects the template folder to be `templates` by default. Change this to `template` to fit assignment criteria.
-app = Flask(__name__, template_folder='template')
-
+app = Flask(__name__,template_folder='./templates',static_folder='./static')
 
 
 
