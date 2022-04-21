@@ -75,7 +75,7 @@ pip install -r requirements.txt
 ``` 
 
 
-This includes an extra module: `python-dotenv==0.20.0` which will read a `.env` and set environment variables found in there. The provided `.env` file includes `FLASK_APP=task6.py` so that the only thing left to do is to run flask. 
+This includes an extra module: `python-dotenv==0.20.0` which will read a `.env` and set environment variables found in there. The provided `.env` file includes `FLASK_APP=task7.py` so that the only thing left to do is to run flask. 
 
 
 
@@ -96,10 +96,10 @@ Error: Could not locate a Flask application. You did not provide the "FLASK_APP"
 ### Manually Set Environment Variables If Needed
 ```
 # If on windows use 
-set FLASK_APP=task6.py
+set FLASK_APP=task7.py
 
 #If on linux/WSL use 
-export FLASK_APP=task6.py
+export FLASK_APP=task7.py
 ```
 
 
