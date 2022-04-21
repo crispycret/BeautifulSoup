@@ -5,42 +5,37 @@
     <meta charset="UTF-8">
     <title>Job Details</title>
 
-    <!-- <link rel="stylesheet" href="./css/jobDetails.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+    <!-- Import jobDetails.css after bootstrap for extensions to work. -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/jobDetails.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 </head>
 
 
 <body>
-    <div id="raw-json">
-        {{ responseJSON }}
+    
+    <!-- Job Listing  -->
+    <div class="container-fluid card">
+
+        <h1 class="card-header" >Job Listing </h1>
+        
+        <div class="card-body">
+            <!-- job = ['job_title', 'company_name', 'description', 'salary'] -->
+            {% for job in responseJSON %}
+                <div class="card">
+                    <h5 class="card-header">{{ job[1] }}</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ job[0] }}</h5>
+                        <p class="card-text">{{ job[3] }} </p>
+                        <p class="card-text">{{ job[2] }} </p>
+                        <a href="#" enables="false" class="btn btn-primary">Apply Now</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        
     </div>
-    <h1>Job Details</h1>
-    <hr>
-
-    <div id="json-rows">
-
-        <!-- job = ['job_title', 'company_name', 'description', 'salary'] -->
-        {% for job in responseJSON %}
-
-        <div class="card">
-            <h5 class="card-header">{{ job[1] }}</h5>
-            <div class="card-body">
-              <h5 class="card-title">{{ job[0] }}</h5>
-              <p class="card-text"> {{ job[3] }} </p>
-              <p class="card-text"> {{ job[2] }} </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-<!-- 
-        <div class="title">Title: {{ job[0] }}</div>
-        <div>Company: {{ job[1] }}</div>
-        <div>Description: {{ job[2] }}</div>
-        <div>Salary: {{ job[3] }}</div>
-        <hr> -->
-
-        {% endfor %}
-    </div>
+    <!-- End Listing  -->
 
 
 </body>
